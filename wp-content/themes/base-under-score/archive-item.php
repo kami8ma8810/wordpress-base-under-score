@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying archive pages
  *
@@ -10,9 +11,9 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main col-md-8">
-<ul>
-		<?php if ( have_posts() ) : ?>
+<main id="primary" class="site-main col-md-8">
+	<ul>
+		<?php if (have_posts()) : ?>
 
 			<header class="page-header">
 				<h1>WEB制作ショップ</h1>
@@ -20,7 +21,7 @@ get_header();
 
 			<?php
 			/* Start the Loop */
-			while ( have_posts() ) :
+			while (have_posts()) :
 				the_post();
 
 				/*
@@ -30,23 +31,23 @@ get_header();
 				 */
 
 				// get_template_part( 'template-parts/content', get_post_type() );
-				?>
+			?>
 				<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-<?php
+			<?php
 			endwhile;
 			?>
-			</ul>
-			<?php
+	</ul>
+<?php
 			the_posts_navigation();
 
 		else :
 
-			get_template_part( 'template-parts/content', 'none' );
+			get_template_part('template-parts/content', 'none');
 
 		endif;
-		?>
+?>
 
-	</main><!-- #main -->
+</main><!-- #main -->
 
 <?php
 get_sidebar();
