@@ -63,10 +63,17 @@ define('NONCE_SALT',       'OAwgdFg1w+GcYF2TKjpX0+yc07x/aVscBRoKqU3nv+KndGFXR3K2
  */
 $table_prefix = 'wp_';
 
+/**  デバッグモード有効化 */
+define( 'WP_DEBUG', true );
 
+/** エラーをブラウザーに表示するか */
+define( 'WP_DEBUG_DISPLAY', false );
+@ini_set('display_errors',0);
 
+/** エラーログをファイルに保存する（保存先は/wp-content/以下 */
+define( 'WP_DEBUG_LOG', true );
 
-/* That's all, stop editing! Happy publishing. */
+/* That's all, stop editing! Happy publishing.追記する場合はこれより上に記述してください */
 
 /** Absolute path to the WordPress directory. */
 if ( ! defined( 'ABSPATH' ) ) {
